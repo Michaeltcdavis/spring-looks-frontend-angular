@@ -5,7 +5,16 @@
         <h1 class="flex items-center title-logo">Spring Looks</h1>
     </span>
 
-    <div class="h-full flex items-center">
-        <span class="p-5">Auth Status</span>
+    <div class="h-full flex flex-col items-center justify-center">
+        @if (isAuthenticated) {
+            <ul>
+                <li><p> Hi {{ username }}!</p></li>
+                <li><a (click)="logout()">logout</a></li>
+            </ul>
+            
+            
+        } @else {
+            <a (click)="login()">login</a>
+        }
     </div>
 </nav>

@@ -16,6 +16,7 @@
     "@angular/forms": "^20.0.0",
     "@angular/platform-browser": "^20.0.0",
     "@angular/router": "^20.0.0",
+    "angular-auth-oidc-client": "^19.0.1",
     "install": "^0.13.0",
     "normalize.css": "^8.0.1",
     "npm": "^11.4.1",
