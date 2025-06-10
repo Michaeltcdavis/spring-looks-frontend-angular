@@ -5,6 +5,8 @@ import { routes } from './app.routes';
 import {authConfig} from "./config/auth-config";
 import {provideAuth} from "angular-auth-oidc-client";
 import { provideHttpClient } from '@angular/common/http';
+import { withInterceptors } from '@angular/common/http';
+import { authInterceptor } from './interceptor/auth-interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -12,6 +14,7 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
+    provideHttpClient(withInterceptors([authInterceptor])),
     provideAuth(authConfig),
   ]
 };

@@ -1,0 +1,14 @@
+<main>
+    <p>Products</p>
+    @if (products.length > 0) {
+        <ul>
+            @for (product of products; track product.id) {
+                <li>
+                    <span>{{ product.name }}</span>
+                    <span>Price: {{ product.price }}</span>
+                    <span></span>
+                </li>
+            }
+        </ul>
+    }
+</main>
