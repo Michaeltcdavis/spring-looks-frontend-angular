@@ -1,5 +1,10 @@
 <main>
-    <p>Products</p>
+    <h1>Products</h1>
+    @if (isAuthenticated) {
+        <button (click)="goToCreateProductPage()">Create Product</button>
+    } @else {
+        <p>Please login to see products</p>
+    }
     @if (products.length > 0) {
         <ul>
             @for (product of products; track product.id) {

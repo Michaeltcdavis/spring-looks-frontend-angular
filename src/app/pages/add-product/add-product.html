@@ -1,0 +1,50 @@
+<main>
+    <h1>Create Product</h1>
+    @if (isProductCreated) {
+        <p>Product Created Successfully</p>
+    }
+    <form [formGroup]="addProductForm" (ngSubmit)="onSubmit()" class="flex flex-col justify-between">
+        <label>skuCode</label>
+        <input 
+            type="text"
+            id="skuCode"
+            formControlName="skuCode"
+            class="border-b border-grey"
+        />
+        @if (skuCode?.touched && skuCode?.dirty && skuCode?.invalid) {
+            <p>Invalid skuCode</p>
+        }
+        <label>Name</label>
+        <input 
+            type="text" 
+            id="name" 
+            formControlName="name"
+            class="border-b border-grey"
+        />
+        @if (name?.touched && name?.dirty && name?.invalid) {
+            <p>Invalid Name</p>
+        }
+        <label>Description</label>
+        <input 
+            type="text" 
+            id="description" 
+            formControlName="description"
+            class="border-b border-grey"
+        />
+        @if (description?.touched && description?.dirty && description?.invalid) {
+            <p>Invalid description</p>
+        }
+        <label>Price</label>
+        <input 
+            type="number" 
+            id="price" 
+            formControlName="price"
+            class="border-b border-grey"
+        />
+        @if (price?.touched && price?.dirty && price?.invalid) {
+            <p>Invalid price</p>
+        }
+
+        <button type="submit" [disabled]="addProductForm.invalid">Create Product!</button>
+    </form>
+</main>

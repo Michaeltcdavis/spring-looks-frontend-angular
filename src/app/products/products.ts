@@ -32,4 +32,8 @@ export class Products implements OnInit {
     )
   }
 
+  goToCreateProductPage(): void {
+    this.router.navigateByUrl("/addProduct");
+  }
+
 }
